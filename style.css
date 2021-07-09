@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6b0f1a;
+  background-image: linear-gradient(315deg, #6b0f1a 0%, #b91372 74%);
+
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.quiz-container {
+  background-color: #6b0f1a;
+  background-image: linear-gradient(315deg, #6b0f1a 0%, #b91372 74%);
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  overflow: hidden;
+  width: 600px;
+  max-width: 100%;
+}
+
+h2 {
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+.quiz-header {
+  padding: 4rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+ul li label {
+  cursor: pointer;
+  color: #0e0d0d;
+  font-size: 24px;
+}
+
+/* ラジオボタン */
+input {
+  cursor: pointer;
+  appearance: none; /* remove default */
+  margin: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  vertical-align: middle;
+  box-shadow: hsla(0, 0%, 100%, 0.15) 0 1px 1px, inset hsla(0, 0%, 0%, 0.5) 0 0 0 1px;
+  background-color: hsla(0, 0%, 0%, 0.2);
+  background-image: radial-gradient(hsla(200, 100%, 90%, 1) 0%, hsla(200, 100%, 70%, 1) 15%, hsla(200, 100%, 60%, 0.3) 28%, hsla(200, 100%, 30%, 0) 70%);
+  background-repeat: no-repeat;
+  transition: background-position 0.15s cubic-bezier(0.8, 0, 1, 1), transform 0.25s cubic-bezier(0.8, 0, 1, 1);
+  outline: none;
+}
+input:checked {
+  transition: background-position 0.2s 0.15s cubic-bezier(0, 0, 0.2, 1), transform 0.25s cubic-bezier(0, 0, 0.2, 1);
+}
+input:active {
+  transform: scale(1.5);
+  transition: transform 0.1s cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* The up/down direction logic */
+
+input,
+input:active {
+  background-position: 0 24px;
+}
+input:checked {
+  background-position: 0 0;
+}
+input:checked ~ input,
+input:checked ~ input:active {
+  background-position: 0 -24px;
+}
+
+/* button {
+  background-color: #b91372;
+  border: none;
+  color: #0e0d0d;
+  display: block;
+  font-family: inherit;
+  font-size: 1.3rem;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 1rem;
+}
+
+button:hover {
+  background-color: #b91372;
+} */
+
+/* button-css */
+button {
+  background-color: #b91372;
+  border: none;
+  color: #0e0d0d;
+  display: block;
+  font-family: inherit;
+  font-size: 1.3rem;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 1rem;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 2px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+button:hover {
+  color: #fff;
+  background: #b91372;
+  box-shadow: 0 0 10px #b91372, 0 0 40px #b91372, 0 0 80px #b91372;
+  transition-delay: 0.5s;
+}
+
+button span {
+  position: absolute;
+  display: block;
+}
+
+button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(30deg, transparent, #fff);
+}
+
+button:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(60deg, transparent, #fff);
+}
+
+button:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, #fff);
+}
+
+button:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(150deg, transparent, #fff);
+}
+
+button:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
